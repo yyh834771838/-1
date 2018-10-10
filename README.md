@@ -21,7 +21,7 @@ int Length;
 int dir;      
 int eated=0;        
 int score=0; 
-     
+void init();     
 void init()       
 {
     srand((unsigned)time(NULL));            
@@ -74,9 +74,9 @@ int check(int X,int Y)
 }
 
 void obstacle()
-    {
+{
 
-     int i,j;
+    int i,j;
     do
     {
         i=rand()%Height;         
@@ -258,11 +258,16 @@ void printScore()
 
 
 int difficult()
-{    int Time;
+{    
+
+	int Time = 0;
     if(kbhit()!=0)          
     {
         char in;
-        while(!kbhit()==0)      in=getch();
+        while(!kbhit()==0) 
+		{
+        	in=getch();
+		}    
         switch(in)
         {
           case 'A':   
